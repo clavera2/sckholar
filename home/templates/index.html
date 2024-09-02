@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <title>Sckholar home</title>
+        <meta charset="UTF-8">
+        <meta viewport="device-width">
+        <style>
+            /* imported google font = New Amsterdam */
+            @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+            .new-amsterdam-regular {
+                font-family: "New Amsterdam", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            /* nav-bar styling */
+            /*
+            nav {
+                background-color: rgb(163, 160, 160);
+                height: 50px;
+            } */
+            nav ul{
+                display: flex;
+                list-style: none;
+                justify-content: right;
+                padding-top: 30px;
+            }
+            nav ul li {
+                margin-left: 40px;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                font-size: larger;
+                font-family: "new amsterdam"; 
+            }
+            /* body styling */
+            /*
+            body {
+                background-image: linear-gradient(purple, white);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }*/
+            body {
+                background-color: rgb(39, 36, 36);
+            }
+            /* heading styling */
+            h1 {
+                font-family: "new amsterdam";
+                font-size: 150px;
+                color: white;
+            }
+            h3 {
+                font-family: new amsterdam;
+                font-size: 50px;
+                color: white;
+            }
+            button {
+                height: 25px;
+                width: 90px;
+                margin-top: 20px;
+                font-size: 15px;
+                border-radius: 20px;
+                border-width: 0px;
+            }
+            #btn-div button a {
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./login.html">Sign in</a></li>
+                    <li><a href="#" id="settings">Help</a></li>
+                    <li><a href="#">Contact-Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Sckholar</h1>
+            <h3>A platform for connected students.</h3>
+            <div id="btn-div">
+                <button><a href="login.html">Sign-In</a></button>
+                <button>Log-In</button>
+            </div>
+        </main>
+        <script>
+            console.log("hello world");
+        </script>
+    </body>
+</html>
