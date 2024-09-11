@@ -8,3 +8,7 @@ def home(request):
 
 def loginPage(request):
     return render(request, 'login.html')
+
+
+def signIn(request):
+    return render(request, "signIn.html")

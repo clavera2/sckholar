@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sckholar | Log-In</title>
+        <title>Sckholar | Sign-Up</title>
         <meta charset="UTF-8">
         <meta viewport="device width">
         <style>
@@ -36,12 +36,23 @@
             .content {
                 background-color: rgb(31, 30, 30);
                 width: 300px;
-                height: 300px;
+                height: 400px;
                 text-align: center;
                 border-radius: 10px;
                 padding: 50px;
             }
-            
+            #name, #mail, #pass, #re-pass {
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            #name input, #mail input, #pass input, #re-pass input {
+                height: 30px;
+                border-radius: 20px;
+                border-width: 0px;
+                width: 300px;
+            }
+
             #username, #password {
                 color: white;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -70,23 +81,49 @@
         <div class="container">
             <div class="content">
                 <form>
-                <h2>Log-In</h2>
-                <div id="username">
-                <label>Enter Username</label>
+                <h2>Sign-Up</h2>
+                <div id="name">
+                    <label>Enter Full-Name</label>
                 <br>
-                <input type="text">
+                    <input type="text" id="name">
                 </div>
                 <br>
-                <div id="password">
-                <label>Enter password</label>
+                <div id="mail">
+                    <label>Enter mail</label>
                 <br>
-                <input type="password">
+                    <input type="text" id="mail">
+                </div>
+                <div id="pass">
+                    <label>Enter password</label>
+                <br>
+                    <input type="password" id="firstPass">
+                </div>
+                <div id="re-pass">
+                    <label>Re-enter password</label>
+                    <br>
+                    <input type="password" id="secondPass">
                 </div>
                 <br>
-                <button id="login_button">Log-In</button>
-                <p><a href="./signIn.html">Don't have an account?</a></p>
+                <button id="login_button">Submit</button>
+                <p><a href="login.html">Already have an account?</a></p>
                 </form>
             </div>
         </div>
+        <script>
+            const button = document.querySelector("button");
+            button.addEventListener('click', () => {
+                var pass = document.getElementById("firstPass");
+                var rePass = document.getElementById("secondPass");
+                var name = document.getElementById("name");
+                var mail = document.getElementById("mail");
+                if (pass.value !== rePass.value) {
+                    window.alert("Passwords provided are not the same. Retry")
+                } else if(mail.value !== "" || name.value !== "") {
+                    window.alert("Fields are empty");
+                } else {
+                    fetch("localhost:8000/login")
+                }
+            })
+        </script>
     </body>
 </html>
